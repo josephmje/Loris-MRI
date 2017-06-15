@@ -987,13 +987,13 @@ sub moveAndUpdateTarchive {
     return $newTarchiveLocation;
 }
 
-################################################################
-###################### CreateMRICandidates #####################
-################################################################
+######################################################################
+###################### CreateMRICandidates ###########################
+######################################################################
 sub CreateMRICandidates {
-    ############################################################
-    ### Standardize gender (DICOM uses M/F, DB uses Male/Female)
-    ############################################################
+    ##################################################################
+    # Standardize gender (DICOM uses M/F/O, DB uses Male/Female/Other)
+    ##################################################################
     my $this = shift;
     my $query = '';
     my ($subjectIDsref,$gender,$tarchiveInfo,$User,$centerID) = @_;
@@ -1004,7 +1004,9 @@ sub CreateMRICandidates {
             $gender = "Female";
     } elsif ($tarchiveInfo->{'PatientGender'} eq 'M') {
         $gender = "Male";
-    }
+    } elsif ($tarchiveInfo->{'PatientGender'} eq 'O') {
+        $gender = "Other";
+    }	
     # get the upload_id from the tarchive_srcloc for notification_spool
     $tarchive_srcloc = $tarchiveInfo->{'SourceLocation'};
     $upload_id = getUploadIDUsingTarchiveSrcLoc($tarchive_srcloc);
