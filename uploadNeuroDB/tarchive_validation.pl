@@ -85,8 +85,8 @@ The program does the following validation
 
 - Verify/determine the ScannerID (optionally create a new one if necessary)
 
-- Optionally create candidates as needed Standardize gender (DICOM uses M/F, 
-  DB uses Male/Female)
+- Optionally create candidates as needed Standardize gender (DICOM uses M/F/O, 
+  DB uses Male/Female/Other)
 
 - Check the CandID/PSCID Match It's possible that the CandID exists, but 
   doesn't match the PSCID. This will fail further
@@ -256,7 +256,7 @@ my $subjectIDsref = $utility->determineSubjectID(
 ################################################################
 ################################################################
 ## Optionally create candidates as needed Standardize gender ###
-## (DICOM uses M/F, DB uses Male/Female) #######################
+## (DICOM uses M/F/O, DB uses Male/Female/Other) ###############
 ################################################################
 ################################################################
 $utility->CreateMRICandidates(
