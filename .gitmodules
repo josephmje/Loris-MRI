@@ -1,3 +1,4 @@
 [submodule "dicom-archive"]
 	path = dicom-archive
 	url = https://github.com/josephmje/dicom-archive-tools.git
+	branch = pond
