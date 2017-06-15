@@ -190,7 +190,7 @@ my $prefix           = $Settings::prefix;
 my $converter        = $Settings::converter;
 my $mail_user        = $Settings::mail_user;
 my $get_dicom_info   = $Settings::get_dicom_info;
-my $exclude          = "localizer"; # case insensitive
+my $exclude          = "'_ADC\|_FA\|_ColFA\|TRACEW\|svs\|OptFA'"; # case insensitive
 my $template         = "TarLoad-$hour-$min-XXXXXX"; # for tempdir
 my $User             = `whoami`;
 
